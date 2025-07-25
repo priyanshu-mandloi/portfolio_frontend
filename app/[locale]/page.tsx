@@ -85,7 +85,7 @@ const Home: NextPage = () => {
       <div className=" w-full min-h-screen bg-cover bg-center flex flex-col">
         <Navbar />
         <section
-          className="flex flex-col md:flex-row w-full justify-around items-center px-4 sm:px-6 md:px-10 lg:px-16 gap-10 xl:mt-10 md:mt-40 lg:mt-40 mt-20 mb-20"
+          className="flex flex-col md:flex-row w-full justify-around items-center px-4 sm:px-6 md:px-10 lg:px-16 gap-10 xl:mt-10 md:mt-40 lg:mt-40 mt-30 mb-20"
           aria-label="Hero Section"
         >
           <article className="flex flex-col justify-center items-center md:items-start space-y-6 text-center md:text-left max-w-xl">

@@ -3,6 +3,7 @@
 import { JSX, useState } from "react";
 
 import CertificatePage from "./CertificatePage";
+import CodingProfilePage from "./CodingProfilePage";
 import Image from "next/image";
 import { NextPage } from "next";
 import { motion } from "framer-motion";
@@ -10,9 +11,9 @@ import { useTranslations } from "next-intl";
 
 const ExperiencePage: NextPage = () => {
   const t = useTranslations("experience");
-  const [activeTab, setActiveTab] = useState<"experience" | "certificates">(
-    "experience"
-  );
+  const [activeTab, setActiveTab] = useState<
+    "experience" | "rankings" | "rewards"
+  >("experience");
 
   const details = t.raw("details") as {
     id: number;
@@ -42,7 +43,7 @@ const ExperiencePage: NextPage = () => {
 
       {/* Filter Tabs */}
       <div className="flex justify-center mb-10 space-x-4">
-        {["experience", "certificates"].map((tab) => (
+        {["experience", "rankings", "rewards"].map((tab) => (
           <button
             key={tab}
             onClick={() => setActiveTab(tab as typeof activeTab)}
@@ -108,9 +109,17 @@ const ExperiencePage: NextPage = () => {
           </div>
         </div>
       )}
+      {/* Coding Profile Section Placeholder */}
 
-      {/* Certificates Section Placeholder */}
-      {activeTab === "certificates" && (
+      {activeTab === "rankings" && (
+        <div className="max-w-5xl mx-auto text-center mt-10 px-4 text-lg font-medium">
+          {/* You can replace this with your <CertificateSection /> component */}
+          <CodingProfilePage />
+        </div>
+      )}
+
+      {/* Rewards Section Placeholder */}
+      {activeTab === "rewards" && (
         <div className="max-w-5xl mx-auto text-center mt-10 px-4 text-lg font-medium">
           {/* You can replace this with your <CertificateSection /> component */}
           <CertificatePage />

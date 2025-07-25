@@ -173,7 +173,7 @@ export default function Navbarblogs() {
           )}
         </div>
         <ModeToggle />
-        {!loadingUser && (
+        {!loadingUser && currentUser && (
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
               <div className="relative h-10 w-10 rounded-full border-2 border-violet-600 overflow-hidden shadow-md cursor-pointer hover:scale-105 transition-transform">
