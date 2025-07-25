@@ -1,0 +1,221 @@
+{
+  "navbar": {
+    "home": "Startseite",
+    "about": "Über uns",
+    "project": "Projekte",
+    "blogs": "Blogs",
+    "contact": "Kontaktiere mich"
+  },
+  "home": {
+    "greeting": "Hallo!",
+    "introduction": "Ich bin Priyanshu Mandloi",
+    "description": "Ich bin leidenschaftlich daran interessiert, komplexe Ideen in skalierbare Anwendungen umzusetzen, die Wirkung und Leistung liefern.",
+    "hireMe": "Stell mich ein",
+    "used_title": "Was ich benutze"
+  },
+  "typewriter": {
+    "se": "Technikbegeisterter",
+    "be": "Wettbewerbsprogrammierer",
+    "dev": "Full-Stack-Entwickler",
+    "fd": "Selbstmotiviert"
+  },
+
+  "about": {
+    "title": "Über mich",
+    "description": "Ich bin Priyanshu Mandloi, ein leidenschaftlicher Full Stack Entwickler, der es liebt, wirkungsvolle, skalierbare und leistungsorientierte Webanwendungen zu erstellen. Mit einer soliden Grundlage in C++, React.js, Node.js und MongoDB genieße ich es, komplexe Ideen in saubere, funktionale digitale Erlebnisse umzusetzen. Derzeit studiere ich Informationstechnologie an der IET DAVV und habe Projekte wie PM Real Estate, eine Echtzeit-Immobilienplattform, und ein Student Analytics Dashboard entwickelt, das die akademische Entscheidungsfindung durch Datenvisualisierung verbessert. Von der Lösung von über 700 LeetCode-Problemen bis hin zur Zusammenarbeit an Hackathons und teamorientierten Lösungen strebe ich immer danach, Grenzen zu überschreiten, um zu lernen, zu bauen und etwas Bedeutungsvolles zu schaffen.",
+    "viewResume": "Lebenslauf ansehen",
+    "downloadResume": "Lebenslauf herunterladen"
+  },
+  "education": {
+    "title": "Bildung",
+    "details": [
+      {
+        "date": "2017-2018",
+        "title": "Sekundarschulbildung",
+        "subtitle": "Sanskar Academy, Thikri",
+        "description": "Ich habe meine 10. Klasse erfolgreich mit einem Durchschnitt von 80% abgeschlossen."
+      },
+      {
+        "date": "2019 - 2020",
+        "title": "Höhere Sekundarschulbildung",
+        "subtitle": "Gurukul School, Dhamnod",
+        "description": "Ich habe 88,6% in der 12. Klasse im Jahr 2019-2020 erzielt und die JEE Mains-Prüfung im Jahr 2021 mit dem Rang 50644 AIR durch Selbststudium bestanden."
+      },
+      {
+        "date": "2021 - 2025",
+        "title": "Postgraduation",
+        "subtitle": "IET DAVV, Indore",
+        "description": "Ich habe mein Postgraduation am Institute of Engineering and Technology (IET) DAVV, Indore, abgeschlossen. Ich habe einen Gesamtdurchschnitt von 8.74 CGPA erreicht."
+      }
+    ]
+  },
+  "experience": {
+    "title": "Meine Berufserfahrung",
+    "details": [
+      {
+        "id": 1,
+        "logo": "/assets/valet.png",
+        "company": "ValetX",
+        "position": "Full Stack Entwickler Praktikant | Remote",
+        "duration": "Juni 2025 – Aug. 2025",
+        "tasks": [
+          "Entwicklung einer ValetX-Webanwendung mit React.js, Node.js und PostgreSQL, Verbesserung der Benutzererfahrung durch responsives Design."
+        ]
+      },
+      {
+        "id": 2,
+        "logo": "/assets/image.png",
+        "company": "Accenture",
+        "position": "Packaged App Entwickler Praktikant | Vor Ort",
+        "duration": "Feb. 2025 – Juni 2025",
+        "tasks": [
+          "Entwicklung und Optimierung von Backend-APIs mit Java und Spring Boot, Reduzierung der Antwortzeit um 30 % und Beitrag zu 70 % der API-Module.",
+          "Implementierung von über 10 Backend-Funktionen in agilen Sprints, Datenbankintegration und Teilnahme an wöchentlichen Code-Reviews."
+        ]
+      },
+      {
+        "id": 3,
+        "logo": "/assets/institute/iet.png",
+        "company": "IET DAVV Prüfungsabteilung",
+        "position": "Dashboard-Entwickler | Vor Ort",
+        "duration": "April 2024 – Mai 2024",
+        "tasks": [
+          "Erstellung eines Dashboards für die Prüfungsabteilung des IET DAVV mit Looker Studio und MySQL-Datenbank zur Verbesserung der Datenvisualisierung und Berichterstellung."
+        ]
+      }
+    ]
+  },
+
+  "project": {
+    "title": "Projekte",
+    "details": [
+      {
+        "id": 1,
+        "name": "Portfolio-Website",
+        "description": "Portfolio-Website zur Präsentation meiner Projekte und Fähigkeiten. Ich habe moderne Webtechnologien verwendet, um ein responsives und interaktives Design zu erstellen.",
+        "technologies": "Next.js, Node.js, PostgreSQL, Express.js, Prisma ORM",
+        "image": "/assets/project/portfolio.png",
+        "link": "https://github.com/priyanshu-mandloi/portfolio_website_frontend"
+      },
+      {
+        "id": 2,
+        "name": "PM Immobilienplattform",
+        "description": "Eine Echtzeit-Immobilienplattform, die Käufer und Verkäufer verbindet, mit Immobilienanzeigen, Benutzeranmeldung und responsivem Design.",
+        "technologies": "React.js, Node.js, MongoDB, Express.js, Prisma ORM",
+        "image": "/assets/project/real_estate.png",
+        "link": "https://github.com/priyanshu-mandloi/pm-real-estate"
+      },
+      {
+        "id": 3,
+        "name": "IoT-basiertes intelligentes Sicherheitssystem",
+        "description": "Ein IoT-basiertes Sicherheitssystem, das verschiedene Sensoren und Kameras zur Überwachung und Sicherung von Räumen nutzt.",
+        "technologies": "C++, Arduino, JavaScript, TypeScript, React Native, Node.js",
+        "image": "/assets/project/security.png",
+        "link": "https://github.com/Final-year-Project-iet"
+      },
+      {
+        "id": 4,
+        "name": "Avlanche",
+        "description": "Eine Plattform für zwischenmenschliche Interaktion, auf der Menschen ihre Ansichten teilen und sich austauschen können.",
+        "technologies": "Ejs, Nodejs, Express.js, MongoDB",
+        "image": "/assets/project/avlanche.png",
+        "link": "https://github.com/priyanshu-mandloi/Social-Media-Website"
+      },
+      {
+        "id": 5,
+        "name": "Chat-App",
+        "description": "Eine Chat-Anwendung für den Austausch von Nachrichten in Echtzeit.",
+        "technologies": "React.js, Spring Boot, MongoDB",
+        "image": "/assets/project/chatapp.png",
+        "link": "https://github.com/priyanshu-mandloi/CHAT_APP"
+      },
+      {
+        "id": 6,
+        "name": "Zähler",
+        "description": "Ein moderner, responsiver Zähler mit HTML, CSS und JavaScript. Zeigt den Zählerwert fünfstellig an und aktualisiert ihn automatisch.",
+        "technologies": "HTML, CSS, JavaScript",
+        "image": "/assets/project/Pro7.png",
+        "link": "https://github.com/priyanshu-mandloi/FiveDigitCounter"
+      },
+      {
+        "id": 7,
+        "name": "Ping Pong Spiel",
+        "description": "Ein interaktives Ping Pong Spiel im Browser mit HTML, CSS und JavaScript.",
+        "technologies": "HTML, CSS, JavaScript",
+        "image": "/assets/project/Pro8.jpeg",
+        "link": "https://github.com/priyanshu-mandloi/Ping-Pong-Game"
+      },
+      {
+        "id": 8,
+        "name": "Portfolio",
+        "description": "Meine Portfolio-Website mit HTML, CSS, JavaScript und Bootstrap zur Präsentation von Projekten und Lebenslauf.",
+        "technologies": "HTML, CSS, JavaScript, Bootstrap",
+        "image": "/assets/project/Pro11.png",
+        "link": "https://github.com/priyanshu-mandloi/Resume"
+      },
+      {
+        "id": 9,
+        "name": "Chat-Bot",
+        "description": "Ein nahtloser Chat-Bot mit tollen Funktionen zur Beantwortung von Fragen. Erstellt mit OpenAI API und Node.js, getestet mit Postman.",
+        "technologies": "React, Vite, Material UI, Axios",
+        "image": "/assets/project/chatbot.png",
+        "link": "https://github.com/priyanshu-mandloi/Chat-Bot"
+      },
+      {
+        "id": 10,
+        "name": "Study Notion",
+        "description": "Eine Echtzeitplattform für Immobilienanzeigen mit Benutzeranmeldung und responsivem Design.",
+        "technologies": "React.js, Node.js, MongoDB, Express.js",
+        "image": "/assets/project/study_notion.png",
+        "link": "https://github.com/priyanshu-mandloi/Study-Notion"
+      },
+      {
+        "id": 11,
+        "name": "Huffman-Codierungsalgorithmus",
+        "description": "Implementierung des Huffman-Codierungsalgorithmus in C++. Häufig in der Datenkompression verwendet.",
+        "technologies": "C++",
+        "image": "/assets/project/Pro10.webp",
+        "link": "https://github.com/priyanshu-mandloi/Huffman-coding-algo"
+      },
+      {
+        "id": 12,
+        "name": "Kontaktliste",
+        "description": "Eine Web-App zur Verwaltung von Kontaktlisten mit HTML, CSS, JavaScript, Node.js und MongoDB.",
+        "technologies": "HTML, CSS, JavaScript, Node.js, MongoDB",
+        "image": "/assets/project/Pro6.png",
+        "link": "https://github.com/priyanshu-mandloi/Contact-List"
+      },
+      {
+        "id": 13,
+        "name": "Taschenrechner",
+        "description": "Ein Web-Taschenrechner zur Durchführung grundlegender mathematischer Operationen mit responsiver Benutzeroberfläche.",
+        "technologies": "HTML, CSS, JavaScript",
+        "image": "/assets/project/calculator.png",
+        "link": "https://github.com/priyanshu-mandloi/Calculator"
+      },
+      {
+        "id": 14,
+        "name": "Todo-App",
+        "description": "Diese Website wurde mit HTML, CSS, JavaScript und Node.js erstellt und dient zur Verwaltung täglicher Aufgaben.",
+        "technologies": "CSS, JavaScript, Node.js, MongoDB",
+        "image": "/assets/project/Pro3.png",
+        "link": "https://github.com/priyanshu-mandloi/Todo"
+      },
+      {
+        "id": 15,
+        "name": "Passwort-Generator",
+        "description": "Eine Website zur sicheren Passwortgenerierung mit HTML, CSS, JavaScript und Tailwind CSS.",
+        "technologies": "HTML, CSS, JavaScript, Tailwind CSS",
+        "image": "/assets/project/Pro5.png",
+        "link": "https://github.com/priyanshu-mandloi/Password-Generator"
+      }
+    ]
+  },
+  "skills": {
+    "title": "Technikfähigkeiten"
+  },
+  "contact": {
+    "title": "Kontaktiere mich",
+    "email": "Email Me"
+  }
+}
