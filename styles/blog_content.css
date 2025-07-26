@@ -183,7 +183,7 @@
     white-space: normal !important;
 }
 
-.blog-content .code-block {
+/* .blog-content .code-block {
     background: #f8f9fa !important;
     border: 1px solid #e9ecef !important;
     border-radius: 8px !important;
@@ -300,7 +300,154 @@
     background: #1e1e1e;
     border-color: #3e3e3e;
     color: #d4d4d4;
+} */
+
+
+
+
+/* Add this to your blog-content.css file */
+
+/* Code block container */
+.blog-content .code-block,
+.preview-content .code-block {
+    background: #f8f9fa !important;
+    border: 1px solid #e9ecef !important;
+    border-radius: 8px !important;
+    margin: 20px 0 !important;
+    position: relative !important;
+    overflow: hidden !important;
 }
+
+.dark .blog-content .code-block,
+.dark .preview-content .code-block {
+    background: #1e1e1e !important;
+    border-color: #3e3e3e !important;
+}
+
+/* Pre element inside code block */
+.blog-content .code-block pre,
+.preview-content .code-block pre {
+    margin: 0 !important;
+    padding: 16px !important;
+    background: transparent !important;
+    border: none !important;
+    overflow-x: auto !important;
+    white-space: pre !important;
+    font-family: "SF Mono", Monaco, "Cascadia Code", "Roboto Mono", Consolas, "Courier New", monospace !important;
+    font-size: 14px !important;
+    line-height: 1.6 !important;
+    color: #212529 !important;
+    tab-size: 2;
+}
+
+.dark .blog-content .code-block pre,
+.dark .preview-content .code-block pre {
+    color: #d4d4d4 !important;
+}
+
+/* Code element inside pre */
+.blog-content .code-block pre code,
+.preview-content .code-block pre code {
+    background: transparent !important;
+    border: none !important;
+    padding: 0 !important;
+    font-size: inherit !important;
+    color: inherit !important;
+    white-space: pre !important;
+    word-break: normal !important;
+    overflow-wrap: normal !important;
+    display: block !important;
+}
+
+/* Language labels */
+.blog-content .code-block::before,
+.preview-content .code-block::before {
+    content: attr(data-language);
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: #007acc;
+    color: #fff;
+    padding: 4px 10px;
+    font-size: 11px;
+    border-radius: 0 8px 0 6px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-weight: 500;
+    z-index: 1;
+}
+
+/* Language-specific colors for labels */
+.blog-content .code-block[data-language="javascript"]::before,
+.preview-content .code-block[data-language="javascript"]::before {
+    background: #f7df1e;
+    color: #000;
+}
+
+.blog-content .code-block[data-language="typescript"]::before,
+.preview-content .code-block[data-language="typescript"]::before {
+    background: #3178c6;
+    color: #fff;
+}
+
+.blog-content .code-block[data-language="python"]::before,
+.preview-content .code-block[data-language="python"]::before {
+    background: #3776ab;
+    color: #fff;
+}
+
+.blog-content .code-block[data-language="html"]::before,
+.preview-content .code-block[data-language="html"]::before {
+    background: #e34f26;
+    color: #fff;
+}
+
+.blog-content .code-block[data-language="css"]::before,
+.preview-content .code-block[data-language="css"]::before {
+    background: #1572b6;
+    color: #fff;
+}
+
+.blog-content .code-block[data-language="java"]::before,
+.preview-content .code-block[data-language="java"]::before {
+    background: #ed8b00;
+    color: #fff;
+}
+
+.blog-content .code-block[data-language="cpp"]::before,
+.preview-content .code-block[data-language="cpp"]::before {
+    background: #00599c;
+    color: #fff;
+}
+
+.blog-content .code-block[data-language="json"]::before,
+.preview-content .code-block[data-language="json"]::before {
+    background: #000;
+    color: #fff;
+}
+
+.blog-content .code-block[data-language="sql"]::before,
+.preview-content .code-block[data-language="sql"]::before {
+    background: #336791;
+    color: #fff;
+}
+
+.blog-content .code-block[data-language="plaintext"]::before,
+.preview-content .code-block[data-language="plaintext"]::before {
+    background: #6c757d;
+    color: #fff;
+    content: "Code";
+}
+
+
+
+
+
+
+
+
+
+
 
 .blog-content mark {
     background: #fff59d;

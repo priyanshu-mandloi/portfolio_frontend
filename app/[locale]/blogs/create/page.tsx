@@ -486,7 +486,7 @@ export default function CreateBlogPage() {
                       )}
                     />
                   ) : (
-                    <p className="text-muted-foreground italic text-center py-12">
+                    <p className="text-red-500 italic text-center py-12">
                       Start writing your blog content to see the preview...
                     </p>
                   )}
