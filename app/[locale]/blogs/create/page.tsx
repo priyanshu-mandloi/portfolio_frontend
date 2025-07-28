@@ -2,6 +2,7 @@
 
 import { Edit, Eye, Upload } from "lucide-react";
 import { Toaster, toast } from "react-hot-toast";
+import { useEffect, useState } from "react";
 
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -14,13 +15,37 @@ import { motion } from "framer-motion";
 import { normalizeBlogHtml } from "@/lib/normalize-blog-html";
 import { useAuth } from "@/context/AuthContext";
 import { useRouter } from "next/navigation";
-import { useState } from "react";
 
 const TiptapEditor = dynamic(() => import("@/components/TiptapEditor"), {
   ssr: false,
   loading: () => <p>Loading editor...</p>,
 });
+const LOCAL_STORAGE_KEY = "create-blog-draft";
 
+const saveDraftToLocalStorage = (data: any) => {
+  const payload = {
+    data,
+    savedAt: new Date().toISOString(),
+  };
+  localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(payload));
+};
+
+const loadDraftFromLocalStorage = () => {
+  const raw = localStorage.getItem(LOCAL_STORAGE_KEY);
+  if (!raw) return null;
+  try {
+    const parsed = JSON.parse(raw);
+    const savedAt = new Date(parsed.savedAt);
+    const now = new Date();
+    const diff = now.getTime() - savedAt.getTime();
+    const sevenDays = 7 * 24 * 60 * 60 * 1000;
+    if (diff < sevenDays) return parsed.data;
+    localStorage.removeItem(LOCAL_STORAGE_KEY);
+  } catch (e) {
+    localStorage.removeItem(LOCAL_STORAGE_KEY);
+  }
+  return null;
+};
 export default function CreateBlogPage() {
   const router = useRouter();
   const { currentUser } = useAuth();
@@ -35,14 +60,31 @@ export default function CreateBlogPage() {
   const [image, setImage] = useState<File | null>(null);
   const [imagePreview, setImagePreview] = useState<string | null>(null);
   const [showPreview, setShowPreview] = useState(false);
-
+  const [saving, setSaving] = useState(false);
+  const [loading, setLoading] = useState(false);
+  useEffect(() => {
+    const draft = loadDraftFromLocalStorage();
+    if (draft) {
+      setForm(draft.form);
+      setEditorJSON(draft.editorJSON || null);
+    }
+  }, []);
+  const autoSave = (updatedForm: any, updatedJSON: any = editorJSON) => {
+    setSaving(true);
+    saveDraftToLocalStorage({ form: updatedForm, editorJSON: updatedJSON });
+    setTimeout(() => setSaving(false), 500);
+  };
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setForm((f) => ({ ...f, [e.target.name]: e.target.value }));
+    const updatedForm = { ...form, [e.target.name]: e.target.value };
+    setForm(updatedForm);
+    autoSave(updatedForm);
   };
 
   const handleEditorChange = (html: string, json?: any) => {
-    setForm((f) => ({ ...f, content: html }));
-    if (json) setEditorJSON(json);
+    const updatedForm = { ...form, content: html };
+    setForm(updatedForm);
+    setEditorJSON(json || null);
+    autoSave(updatedForm, json);
   };
 
   const handleImageChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -61,12 +103,11 @@ export default function CreateBlogPage() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-
     if (!image) {
       toast.error("Please select an image");
       return;
     }
-
+    setLoading(true);
     const formData = new FormData();
     formData.append("title", form.title);
     formData.append("content", form.content);
@@ -77,7 +118,6 @@ export default function CreateBlogPage() {
     if (editorJSON) {
       formData.append("contentJSON", JSON.stringify(editorJSON));
     }
-
     try {
       await apiRequest.post("/blogs/create", formData, {
         withCredentials: true,
@@ -85,13 +125,14 @@ export default function CreateBlogPage() {
           ? { Authorization: `Bearer ${currentUser.token}` }
           : undefined,
       });
-
+      localStorage.removeItem(LOCAL_STORAGE_KEY);
       toast.success("Blog created successfully!");
       router.push("/blogs");
     } catch (error: any) {
-      console.error(error);
       const message = error?.response?.data?.message || "Failed to create blog";
       toast.error(message);
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -291,7 +332,10 @@ export default function CreateBlogPage() {
           transition={{ duration: 0.6 }}
           className="text-3xl font-bold mb-8 text-center lg:text-left"
         >
-          Create Blog
+          Create Blog{" "}
+          {saving && (
+            <span className="text-sm text-muted-foreground">(Saving...)</span>
+          )}
         </motion.h2>
 
         <div className="grid lg:grid-cols-2 gap-8 min-h-[calc(100vh-200px)]">
@@ -376,7 +420,11 @@ export default function CreateBlogPage() {
                     <Switch
                       checked={form.isPublic}
                       onCheckedChange={(val) =>
-                        setForm((f) => ({ ...f, isPublic: val }))
+                        setForm((f) => {
+                          const updated = { ...f, isPublic: val };
+                          autoSave(updated);
+                          return updated;
+                        })
                       }
                     />
                     <Label className="font-medium">
@@ -419,8 +467,13 @@ export default function CreateBlogPage() {
                   )}
                 </div>
 
-                <Button type="submit" className="w-full" size="lg">
-                  Publish Blog Post
+                <Button
+                  type="submit"
+                  className="w-full"
+                  size="lg"
+                  disabled={loading}
+                >
+                  {loading ? "Publishing..." : "Publish Blog Post"}
                 </Button>
               </form>
             </div>
