@@ -92,7 +92,7 @@
         "id": 1,
         "name": "Portfolio Website",
         "description": "Portfolio website to showcase my projects and skills. Here I have utilized the latest web technologies to create a responsive and interactive design.",
-        "technologies": "Next.js, Node.js, PostgreSQL, Express.js, Prisma ORM",
+        "technologies": "Next.js, Node.js, MongoDB, Express.js, Prisma ORM",
         "image": "/assets/project/portfolio.png",
         "link": "https://github.com/priyanshu-mandloi/portfolio_frontend"
       },
