@@ -65,7 +65,7 @@ const TechList: React.FC<TechListProps> = ({ title, items }) => {
           transition={{ duration: 1 }}
           className="dmSans text-4xl font-bold text-center"
         >
-          What I Use
+          {title}
         </motion.h1>
       </div>
 

@@ -22,9 +22,14 @@
 
   "about": {
     "title": "Über mich",
-    "description": "Ich bin Priyanshu Mandloi, ein leidenschaftlicher Full Stack Entwickler, der es liebt, wirkungsvolle, skalierbare und leistungsorientierte Webanwendungen zu erstellen. Mit einer soliden Grundlage in C++, React.js, Node.js und MongoDB genieße ich es, komplexe Ideen in saubere, funktionale digitale Erlebnisse umzusetzen. Derzeit studiere ich Informationstechnologie an der IET DAVV und habe Projekte wie PM Real Estate, eine Echtzeit-Immobilienplattform, und ein Student Analytics Dashboard entwickelt, das die akademische Entscheidungsfindung durch Datenvisualisierung verbessert. Von der Lösung von über 700 LeetCode-Problemen bis hin zur Zusammenarbeit an Hackathons und teamorientierten Lösungen strebe ich immer danach, Grenzen zu überschreiten, um zu lernen, zu bauen und etwas Bedeutungsvolles zu schaffen.",
     "viewResume": "Lebenslauf ansehen",
-    "downloadResume": "Lebenslauf herunterladen"
+    "downloadResume": "Lebenslauf herunterladen",
+    "t1": "Verrückter",
+    "t2": "Full Stack Entwickler",
+    "t3": "der jeden Tech-Stack erkunden möchte.",
+    "t4": "Entwickle hochinteraktive Frontend-/Benutzeroberflächen für deine Web- und mobilen Anwendungen",
+    "t5": "Fortschrittliche Webanwendungen (PWA) in normalen und SPA-Stacks",
+    "t6": "Containerisierung und Bereitstellung mit Docker sowie Implementierung von CI/CD-Pipelines für effiziente Entwicklungsabläufe."
   },
   "education": {
     "title": "Bildung",

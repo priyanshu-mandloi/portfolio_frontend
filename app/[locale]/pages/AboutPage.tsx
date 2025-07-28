@@ -10,7 +10,7 @@ import { useTranslations } from "next-intl";
 
 const AboutPage: NextPage = () => {
   const t = useTranslations("about");
-  const paragraphs = t("description").split("\n").filter(Boolean);
+
   return (
     <section
       id="about"
@@ -31,22 +31,20 @@ const AboutPage: NextPage = () => {
 
       <div className="flex flex-col xl:flex-row lg:flex-row items-center justify-between w-full max-w-6xl gap-8 mt-5">
         <div className="w-full xl:w-2/3 flex flex-col items-start justify-center">
-          <article className=" p-6 sm:p-8 md:p-10 w-full rounded-xl shadow-md transition-all">
-            <p className="dmSans text-lg sm:text-xl md:text-2xl lg:text-3xl font-medium leading-relaxed text-justify text-black dark:text-white tracking-wide">
-              CRAZY{" "}
+          <article className="p-6 sm:p-8 md:p-10 w-full rounded-xl shadow-md transition-all">
+            <p className="dmSans text-lg sm:text-1xl md:text-1xl lg:text-2xl font-medium leading-relaxed text-justify text-black dark:text-white tracking-wide">
+              {t("t1")}{" "}
               <span className="font-bold text-purple-600 dark:text-purple-400">
-                FULL STACK DEVELOPER
+                {t("t2")}
               </span>{" "}
-              WHO WANTS TO EXPLORE EVERY TECH STACK.
-              <br className=" sm:block" />
-              ⚡Develop highly interactive Frontend / User Interfaces for your
-              web and mobile applications
-              <br />
-              ⚡Progressive Web Applications (PWA) in normal and SPA stacks
-              <br />
-              ⚡Containerization and deployment with Docker, and implementing
-              {"  "} CI/CD pipelines for efficient DevOps workflows
+              {t("t3")}
             </p>
+
+            <div className="mt-4 space-y-3 text-black dark:text-white text-base sm:text-lg md:text-xl">
+              <p>⚡ {t("t4")}</p>
+              <p>⚡ {t("t5")}</p>
+              <p>⚡ {t("t6")}</p>
+            </div>
           </article>
 
           <div className="flex flex-row items-center justify-around mt-6 w-full xl:gap-4 xl:w-1/2 lg:w-2/3 md:w-3/">
@@ -82,15 +80,13 @@ const AboutPage: NextPage = () => {
         <motion.figure
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0, scale: 1 }}
-          // transition={{ duration: 1.2, ease: "easeOut" }}
-          // animate={{ scale: 1.5 }}
           transition={{ type: "spring", damping: 3 }}
           whileHover={{ rotate: [0, 5, -5, 0], transition: { duration: 1.2 } }}
           className="w-64 h-64 relative rounded-2xl overflow-hidden shadow-xl -mt-2"
         >
           <Image
             src="/assets/pm1.JPG"
-            alt="Portrait of Priyanshu Mandloi"
+            alt="pm"
             fill
             className="object-cover brightness-100 dark:brightness-70"
             sizes="(max-width: 768px) 80vw, 33vw"
