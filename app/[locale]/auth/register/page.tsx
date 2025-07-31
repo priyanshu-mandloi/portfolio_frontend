@@ -3,6 +3,7 @@
 import { Card, CardContent } from "@/components/ui/card";
 
 import { Button } from "@/components/ui/button";
+import Image from "next/image";
 import { Input } from "@/components/ui/input";
 import Link from "next/link";
 import Navbarblogs from "@/components/Navbarblogs";
@@ -105,7 +106,7 @@ export default function RegisterPage() {
                 name="password"
                 type="password"
                 required
-                placeholder="••••••••"
+                placeholder="Enter password here..."
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
               />
@@ -114,31 +115,36 @@ export default function RegisterPage() {
                 name="confirmPassword"
                 type="password"
                 required
-                placeholder="••••••••"
+                placeholder="Confirm password..."
                 value={confirmPassword}
                 onChange={(e) => setConfirmPassword(e.target.value)}
               />
 
               <div className="flex items-center space-x-4">
-                <div className="w-14 h-14 rounded-full overflow-hidden bg-muted flex items-center justify-center">
-                  {preview ? (
-                    <img
-                      src={preview}
-                      alt="Avatar preview"
-                      className="object-cover w-full h-full"
-                    />
-                  ) : (
-                    <UploadCloud className="w-6 h-6 text-muted-foreground" />
-                  )}
+                <div className="relative w-14 h-14 rounded-full overflow-hidden border border-input bg-muted flex-shrink-0">
+                  <Image
+                    src={preview || "/assets/avatar_placeholder_dark.png"}
+                    alt="Avatar preview"
+                    fill
+                    className="object-cover"
+                    sizes="56px"
+                  />
                 </div>
-                <Input
-                  id="avatar"
-                  name="avatar"
-                  type="file"
-                  accept="image/*"
-                  onChange={handleAvatarChange}
-                  className="w-full"
-                />
+
+                <div className="relative w-full">
+                  <Input
+                    id="avatar"
+                    name="avatar"
+                    type="file"
+                    accept="image/*"
+                    onChange={handleAvatarChange}
+                    className="opacity-0 absolute inset-0 z-10 cursor-pointer"
+                  />
+                  <div className="w-full border border-input rounded-md py-2 px-3 flex items-center justify-between text-muted-foreground text-sm z-0 bg-background">
+                    {avatar ? avatar.name : "Upload profile picture"}
+                    <UploadCloud className="w-5 h-5" />
+                  </div>
+                </div>
               </div>
 
               <Button
