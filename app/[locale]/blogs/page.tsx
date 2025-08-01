@@ -182,7 +182,7 @@ export default function BlogsPage() {
             <Loader />
           ) : filteredBlogs.length === 0 ? (
             <p className="col-span-full text-center text-muted-foreground">
-              No blogs available.
+              Login to the website!
             </p>
           ) : (
             filteredBlogs.map((blog) => (
