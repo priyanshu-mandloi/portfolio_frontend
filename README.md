@@ -200,6 +200,7 @@ The website achieves excellent performance scores across all metrics:
 ### Coding Profiles
 ### Internship Experience
 ### Reward and Certificates
+### Blogs
 
 ## 🌐 Deployment
 
