@@ -27,6 +27,7 @@ A modern, full-stack portfolio website built with cutting-edge technologies, fea
 - **Dark/Light Mode**: Seamless theme switching with custom transition animations
 - **Internationalization**: Multi-language support for global accessibility
 - **Responsive Design**: Fully responsive across all devices and screen sizes
+- **Asset Managment** : Implemented Next.js Image Optimization with Sharp using next/image, enabling automatic resizing, compression, and modern formats (AVIF/WebP), significantly reducing image payload size. So you can check this thing by going to network tab and you can see the content-type of images are not in png format it is in avif/webP format.
 - **Custom Authentication**: Secure user authentication system
 - **Blog System**: Complete blog platform with rich text editing
 - **Admin Panel**: Dashboard for managing content and user responses
